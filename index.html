@@ -7,7 +7,7 @@
 
 	<!-- Loading Bootstrap -->
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-    
+
 
     <!-- Loading Flat UI -->
     <link href="css/flat-ui.css" rel="stylesheet">
@@ -119,7 +119,7 @@
  				<span class='fui-pause'></span>
 			</a>-->
 			<a class="btn btn-huge btn-info btn-embossed mlm">
- 				<span class='fui-checkbox-checked'></span> &nbsp; <span class='score'>0 / 100</span>
+ 				<span class='fui-checkbox-checked'></span> &nbsp; <span class='score'>0 / 250</span>
 			</a>
      	</div>
      	<div class="buttons buttons-start">
@@ -147,13 +147,13 @@
 
     var whatDoIKnow = [
     	'あ', 'い', 'う', 'え', 'お', 'か', 'き', 'く', 'け', 'こ',
-									 'が', 'ぎ', 'ぐ', 'げ', 'ご', 
-    	'さ', 'し', 'す', 'せ', 'そ', 'た', 'ち', 'つ', 'て', 'と', 
-    	'ざ', 'じ', 'ず', 'ぜ', 'そ', 'だ', 'ぢ', 'づ', 'で', 'ど', 
-    	'は', 'ひ', 'ふ', 'へ', 'ほ', 'な', 'に', 'ぬ', 'ね', 'の', 
+									 'が', 'ぎ', 'ぐ', 'げ', 'ご',
+    	'さ', 'し', 'す', 'せ', 'そ', 'た', 'ち', 'つ', 'て', 'と',
+    	'ざ', 'じ', 'ず', 'ぜ', 'そ', 'だ', 'ぢ', 'づ', 'で', 'ど',
+    	'は', 'ひ', 'ふ', 'へ', 'ほ', 'な', 'に', 'ぬ', 'ね', 'の',
     	'ば', 'び', 'ぶ', 'べ', 'ぼ',
     	'ぱ', 'ぴ', 'ぷ', 'ぺ', 'ぽ',
-    	'ま', 'み', 'む', 'め', 'も', 'や', 'ゆ', 'よ', 
+    	'ま', 'み', 'む', 'め', 'も', 'や', 'ゆ', 'よ',
     	'ら', 'り', 'る', 'れ', 'ろ', 'わ', 'を', 'ん',
     	'きゃ', 'きゅ', 'きょ',
     	'しゃ', 'しゅ', 'しょ',
@@ -280,10 +280,10 @@
     		$('.romaji-container').attr('contenteditable', true).focus();
 
     		$('.time').text('0:00');
-    		$('.score').text('0/100');
+    		$('.score').text('0/250');
 
     		$('.kana-container').html('').attr('style', '');
-    		for (var i = 0; i < 100; i++) {
+    		for (var i = 0; i < 250; i++) {
                 var kanaChar = whatDoIKnow[rand(0, whatDoIKnow.length - 1)];
                 var isKatakana = $('input[name="kana"]:checked').val() == 'katakana';
                 kanaChar = isKatakana ? hiraganaToKatakana(kanaChar) : kanaChar;
@@ -313,7 +313,7 @@
     			$('.kana-container').animate({
     				'margin-left': '-=' + w + 'px'
     			}, 200);
-    			$('.score').html(++score + ' / 100');
+    			$('.score').html(++score + ' / 250');
     		} else if ($(this).html() !== 'n'){
     			$(this).html('');
     			var w = $('.white').first().addClass('red').removeClass('white').width();
@@ -322,7 +322,7 @@
     			}, 200);
     		}
     	}
-    	else if (!(romajiToKana($(this).text() + 'a') || 
+    	else if (!(romajiToKana($(this).text() + 'a') ||
     			   romajiToKana($(this).text() + 'ha'))) {
     		console.log(romajiToKana($(this).html() + 'a'));
     		$(this).html('');
@@ -336,7 +336,7 @@
     			'margin-left': '-=' + $(window).width() / 2 + 'px'
     		});
     		$('.romaji-container').attr('contenteditable', false);
-    		
+
     		clearInterval(timer);
     		timer = null;
 
@@ -354,7 +354,7 @@
     });
 
     </script>
-    
+
     <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 
 </body>
